@@ -12,7 +12,7 @@ class CorePagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get home" do
-    get core_pages_home_url
+    get root_url
     assert_response :success
   end
 
