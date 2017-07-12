@@ -5,5 +5,11 @@ by [Soundlancer LLC](https://www.soundlancer.com).
 
 NW Brewmeisters is a community site for craft beer and brewing enthusiasts.
 
-Content includes articles covering various topics related to craft beer and brewing,
-as well as related video productions.
+- Content includes articles covering various topics related to craft beer and brewing,
+as well as video productions featuring a beer tasting and any other.
+
+- Users may submit beer brewing recipes to share with community.
+
+- The site also includes a monthly event calendar of regional beer happenings.
+
+- Users may comment on posted articles, as well as rate and comment on user-submitted brewing recipes.
