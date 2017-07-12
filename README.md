@@ -3,7 +3,7 @@
 This is the source code for [*NW Brewmeisters*](http://nwbrewmeisters.com)
 by [Soundlancer LLC](https://www.soundlancer.com).
 
-NW Brewmeisters is a community site for craft beer and brewing enthusiasts.
+NW Brewmeisters is a community site for craft beer and home brewing enthusiasts.
 
 - Content includes articles covering various topics related to craft beer and brewing,
 as well as video productions featuring a beer tasting and any other.
