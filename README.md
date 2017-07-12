@@ -1,24 +1,9 @@
-# README
+# Just a couple of guys living in NW Washington who like beer...and think you should too.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the source code for [*NW Brewmeisters*](http://nwbrewmeisters.com)
+by [Soundlancer LLC](https://www.soundlancer.com).
 
-Things you may want to cover:
+NW Brewmeisters is a community site for craft beer and brewing enthusiasts.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Content includes articles covering various topics related to craft beer and brewing,
+as well as related video productions.
