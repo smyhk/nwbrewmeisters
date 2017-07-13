@@ -1,13 +1,17 @@
 Rails.application.routes.draw do
 
-  root 'core_pages#home'
+  root   'core_pages#home'
 
-  get  '/about',   to: 'core_pages#about'
+  get    '/about',   to: 'core_pages#about'
 
-  get  '/contact', to: 'core_pages#contact'
+  get    '/contact', to: 'core_pages#contact'
 
-  get  '/signup',  to: 'users#new'
-  post '/signup', to: 'users#create'
+  get    '/signup',  to: 'users#new'
+  post   '/signup',  to: 'users#create'
+
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
 
   resources :users
 
