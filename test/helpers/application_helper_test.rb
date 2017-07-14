@@ -7,6 +7,7 @@ class ApplicationHelperTest < ActionView::TestCase
     assert_equal full_title("About"), "About | NW Brewmeisters"
     assert_equal full_title("Contact"), "Contact | NW Brewmeisters"
     assert_equal full_title("Sign up"), "Sign up | NW Brewmeisters"
+    assert_equal full_title("Log in"), "Log in | NW Brewmeisters"
   end
 
 end
