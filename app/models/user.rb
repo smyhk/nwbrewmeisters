@@ -47,7 +47,7 @@ class User < ApplicationRecord
 
     # converts email to all lower-case
     def downcase_email
-      self.email = email.downcase
+      email.downcase!
     end
 
     # creates and assigns the activation token and digest
