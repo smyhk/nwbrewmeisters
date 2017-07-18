@@ -15,6 +15,8 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", signup_path
     assert_select "a[href=?]", login_path
     assert_select "a[href=?]", users_path, count: 0
+    # assert_select "a[href=?]", recipes_path
+    # assert_select "a[href=?]", calender_path
 
     log_in_as(@user)
     get users_path
