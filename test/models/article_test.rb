@@ -4,7 +4,9 @@ class ArticleTest < ActiveSupport::TestCase
 
   def setup
     @user = users(:steve)
-    @article = Article.new(title: "Hello", body: "Lorem ipsum", user_id: @user.id)
+    @article = @user.articles.build(title: "Hello",
+                                    body: "Lorem ipsum",
+                                    user_id: @user.id)
   end
 
   test "shoud be valid" do
