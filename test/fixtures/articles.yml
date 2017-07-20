@@ -5,21 +5,33 @@ beer:
   body: "All the beer you can drink"
   user: steve
   created_at: <%= 2.days.ago %>
+  user: steve
 
 water:
   title: "Water is good"
   body: "You need water to make beer"
   user: steve
   created_at: <%= 6.months.ago %>
+  user: steve
 
 wine:
   title: "Wine Making"
   body: "All the wine you can drink"
   user: steve
   created_at: <%= 2.years.ago %>
+  user: steve
 
 most_recent:
   title: "Meade is good"
   body: "You need water to make beer"
   user: steve
-  created_at: <%= Tim.zone.now $>
+  created_at: <%= Time.zone.now %>
+  user: steve
+
+<% 30.times do |n| %>
+article_<%= n %>:
+  title: <%= Faker::Lorem.sentence(1) %>
+  body: <%= Faker::Lorem.paragraph() %>
+  created_at: <%= 42.days.ago %>
+  user: steve
+<% end %>
