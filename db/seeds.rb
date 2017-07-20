@@ -24,3 +24,10 @@ User.create!(name:  "King Smyhk",
                activated: true,
                activated_at: Time.zone.now)
 end
+
+users = User.order(:created_at).take(6)
+5.times do
+  title = Faker::Lorem.sentence(1)
+  body = Faker::Lorem.paragraph(2)
+  users.each { |user| user.articles.create!(title: title, body: body) }
+end
