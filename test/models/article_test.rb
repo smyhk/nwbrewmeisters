@@ -33,4 +33,8 @@ class ArticleTest < ActiveSupport::TestCase
     assert_not @article.valid?
   end
 
+  test "order shoud be most recent first" do
+    assert_equal articles(:most_recent), Article.first
+  end
+
 end
