@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
 
   before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
   before_action :correct_user,   only: [:edit, :update]
+  before_action :admin_user,     only: :delete
 
   def show
   end
@@ -35,6 +36,9 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
+    Article.find(params[:id]).destroy
+    flash[:success] = "Article deleted"
+    redirect_to request.referrer || current_user
   end
 
   private
