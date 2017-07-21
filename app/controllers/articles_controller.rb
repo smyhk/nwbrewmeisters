@@ -18,6 +18,7 @@ class ArticlesController < ApplicationController
       flash[:success] = "Article created!"
       redirect_to current_user
     else
+      @feed_items = []
       render 'core_pages/home'
     end
   end

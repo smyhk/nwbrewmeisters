@@ -6,5 +6,7 @@ class CorePagesController < ApplicationController
   end
 
   def home
+    @articles = Article.all
+    @feed_items = @articles.paginate(page: params[:page])
   end
 end
