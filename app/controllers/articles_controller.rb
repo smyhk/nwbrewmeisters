@@ -5,6 +5,7 @@ class ArticlesController < ApplicationController
   before_action :admin_user,     only: [:edit, :update, :destroy]
 
   def show
+    @article = Article.find(params[:id])
   end
 
   def new
