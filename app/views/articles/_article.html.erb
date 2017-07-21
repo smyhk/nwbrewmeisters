@@ -9,12 +9,9 @@
   <span class="body"><%= article.body %></span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(article.created_at) %> ago.
-    <% if current_user && current_user.admin? %>
-      <%= link_to "delete", article, method: :delete, data: { confirm: "You sure?" } %>
-    <% end %>
-    |
     <% if current_user?(article.user) || (current_user && current_user.admin?)%>
       <%= link_to "edit", edit_article_path(article) %>
+      | <%= link_to "delete", article, method: :delete, data: { confirm: "You sure?" } %>
     <% end %>
   </span>
 </li>
