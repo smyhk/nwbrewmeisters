@@ -21,8 +21,8 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to login_url
   end
 
-  test "should redirect destroy for wrong micropost" do
-    log_in_as(users(:archer))
+  test "should redirect destroy for wrong article" do
+    log_in_as(users(:lana))
     article = articles(:ants)
     assert_no_difference 'Article.count' do
       delete article_path(article)

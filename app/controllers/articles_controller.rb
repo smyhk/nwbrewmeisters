@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
 
   before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
   before_action :correct_user,   only: [:edit, :update]
-  before_action :admin_user,     only: [:edit, :update, :destroy]
+  before_action :admin_user,     only: [:destroy]
 
   def show
     @article = Article.find(params[:id])
@@ -19,7 +19,7 @@ class ArticlesController < ApplicationController
       redirect_to current_user
     else
       @feed_items = []
-      render 'core_pages/home'
+      render 'new'
     end
   end
 
