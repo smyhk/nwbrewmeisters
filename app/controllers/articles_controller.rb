@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
 
   before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
+  before_action :correct_user,   only: [:edit, :update]
 
   def show
   end
@@ -20,9 +21,17 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
+    if @article.update_attributes(article_params)
+      #handle a successful update
+      flash[:success] = "Article updated."
+      redirect_to current_user
+    else
+      render 'edit'
+    end
   end
 
   def destroy
@@ -32,6 +41,11 @@ class ArticlesController < ApplicationController
 
     def article_params
       params.require(:article).permit(:title, :body)
+    end
+
+    def correct_user
+      @article = current_user.articles.find_by(id: params[:id])
+      redirect_to root_url if @article.nil?
     end
 
 end
