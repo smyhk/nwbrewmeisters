@@ -2,3 +2,10 @@
 <ol class="articles">
   <%= render @article %>
 </ol>
+
+<h3>Comments</h3>
+<% @article.comments.each do |comment| %>
+  <div class="well">
+    <%= comment.body %>
+  </div>
+<% end %>    
