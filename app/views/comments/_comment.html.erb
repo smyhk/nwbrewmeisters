@@ -4,7 +4,7 @@
     <%= link_to gravatar_for(comment.user, size: 20), comment.user %>
     <%= link_to comment.user.name, user_path(comment.user) %> says:
     <%= comment.body %>
-    <% if current_user && current_user.admin? %>
+    <% if current_user && current_user.admin? || current_user?(comment.user) %>
       | <%= link_to "delete", [commentable, comment], method: :delete %>
     <% end %>
   </div>

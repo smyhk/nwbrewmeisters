@@ -2,12 +2,18 @@ class CommentsController < ApplicationController
 
   before_action :logged_in_user, only: [:create, :edit, :update, :destroy]
   # before_action :correct_user,   only: [:edit, :update, :destroy]
-  before_action :admin_user,     only: [:destroy]
+  # before_action :admin_user,     only: [:destroy]
 
   def create
     @comment = @commentable.comments.new comment_params
     @comment.user = current_user
     @comment.save
+    redirect_to @commentable
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id]).destroy
+    flash[:success] = "Comment deleted"
     redirect_to @commentable
   end
 
