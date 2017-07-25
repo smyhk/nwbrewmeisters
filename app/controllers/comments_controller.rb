@@ -1,10 +1,10 @@
 class CommentsController < ApplicationController
 
   def create
-    @comment = @commentable.comments.new(comment_params)
-    @comment.user = current_user
+    @comment = @commentable.comments.new comment_params
+    @comment.user_id = current_user
     @comment.save
-    redirect_to @commentable, notice: "Comment saved successfully"
+    redirect_to @commentable
   end
 
   private
