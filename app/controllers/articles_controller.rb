@@ -24,7 +24,7 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-
+    @article = Article.find(params[:id])
   end
 
   def update
@@ -38,9 +38,12 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    Article.find(params[:id]).destroy
+    @article = Article.find(params[:id])
+    if @article.user == current_user || current_user.admin?
+      @article.destroy
+    end
     flash[:success] = "Article deleted"
-    redirect_to request.referrer || current_user
+    redirect_to current_user
   end
 
   private
