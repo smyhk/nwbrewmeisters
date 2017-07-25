@@ -4,9 +4,4 @@
   <%= @recipe.description %>
 </p>
 
-<h3>Comments</h3>
-<% @recipe.comments.each do |comment| %>
-  <div class="well">
-    <%= comment.body %>
-  </div>
-<% end %>
+<%= render partial: 'comments/comment', locals: { commentable: @recipe } %>
