@@ -1,5 +1,7 @@
 class RecipesController < ApplicationController
 
+  before_action :logged_in_user
+
   def show
     @recipe = Recipe.find(params[:id])
   end
