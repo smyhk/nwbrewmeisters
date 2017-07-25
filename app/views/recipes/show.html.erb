@@ -4,5 +4,8 @@
   <%= @recipe.description %>
 </p>
 
+<%= link_to "edit", edit_recipe_path(@recipe) %>
+<%= link_to "delete", @recipe, method: :delete, data: { confirm: "You sure?" } %>
+
 <%= render partial: 'comments/comment', locals: { commentable: @recipe } %>
 <%= render partial: 'comments/form', locals: { commentable: @recipe } %>
