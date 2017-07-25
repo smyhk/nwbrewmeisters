@@ -12,7 +12,10 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = Comment.find(params[:id]).destroy
+    @comment = Comment.find(params[:id])
+    if @comment.user == current_user || current_user.admin?
+      @comment.destroy
+    end
     flash[:success] = "Comment deleted"
     redirect_to @commentable
   end
