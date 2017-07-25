@@ -1,7 +1,8 @@
 <h3>Comments</h3>
 <% commentable.comments.each do |comment| %>
   <div class="well">
-    
+    <%= link_to gravatar_for(comment.user, size: 20), comment.user %>
+    <%= link_to comment.user.name, user_path(comment.user) %> says:
     <%= comment.body %>
   </div>
 <% end %>
