@@ -37,7 +37,7 @@ class RecipesController < ApplicationController
 
   def destroy
     @recipe = Recipe.find(params[:id])
-    if @recipe.user == current_user || @recipe.user == current_user.admin?
+    if @recipe.user == current_user || current_user.admin?
       @recipe.destroy
     end
     flash[:success] = "Recipe deleted"
