@@ -85,4 +85,12 @@ class UserTest < ActiveSupport::TestCase
     end
   end
 
+  test "associated recipes should be destroyed" do
+    @user.save
+    @user.recipes.create!(name: "Best Ale", description: "Lorem ipsum")
+    assert_difference 'Recipe.count', -1 do
+      @user.destroy
+    end
+  end
+
 end
