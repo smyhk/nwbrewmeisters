@@ -16,7 +16,7 @@ class RecipesController < ApplicationController
     @recipe = current_user.recipes.build(recipe_params)
     if @recipe.save
       flash[:success] = "Recipe saved!"
-      redirect_to @recipe
+      redirect_to @user
     else
       render 'new'
     end
