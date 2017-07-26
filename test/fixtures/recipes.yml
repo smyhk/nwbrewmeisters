@@ -19,3 +19,9 @@ meade:
   name: Honey Badger
   description: Here lies the badger with the honey
   user: malory
+
+<% 30.times do |n| %>
+recipe_<%= n %>:
+  name: <%= Faker::Lorem.sentence(1) %>
+  description: <%= Faker::Lorem.paragraph(1) %>
+<% end %>
