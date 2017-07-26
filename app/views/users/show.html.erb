@@ -17,13 +17,16 @@
       <%= will_paginate @articles %>
     <% end %>
   </div>
-</div>
-<div class="col-md-8">
-  <% if @user.recipes.any? %>
-    <h3>Articles (<%= @user.recipes.count %>)</h3>
-    <ol class="recipes">
-      <%= render @recipes %>
-    </ol>
-    <%= will_paginate @recipes %>
-  <% end %>
+  <div class="col-md-8 well">
+    <% if @user.recipes.any? %>
+      <h3>Recipes (<%= @user.recipes.count %>)</h3>
+      <div>
+        <% @recipes.each do |recipe| %>
+          <%= link_to recipe.name, recipe_path(recipe) %>
+          <p><%= recipe.description %></p>
+        <% end %>
+      </div>
+      <%= will_paginate @recipes %>
+    <% end %>
+  </div>
 </div>
