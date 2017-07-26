@@ -1,11 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  description: MyText
-  user: one
+ale:
+  name: Nasty Ale
+  description: The worse ale you will ever drink
+  user: archer
 
-two:
-  name: MyString
-  description: MyText
-  user: two
+lager:
+  name: Bottom Swill
+  description: Evern Coors can get it better
+  user: lana
+
+stout:
+  name: Black as mud
+  description: How about a nice glass of hot steamy tar
+  user: archer
+
+meade:
+  name: Honey Badger
+  description: Here lies the badger with the honey
+  user: malory
