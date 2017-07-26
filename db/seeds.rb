@@ -13,6 +13,7 @@ User.create!(name:  "King Smyhk",
              activated: true,
              activated_at: Time.zone.now)
 
+# test and conept users
 99.times do |n|
   name = Faker::Name.name
   email = "test-#{n+1}@example.com"
@@ -25,9 +26,18 @@ User.create!(name:  "King Smyhk",
                activated_at: Time.zone.now)
 end
 
+# grab the first 6 users and create articles
 users = User.order(:created_at).take(6)
 5.times do
   title = Faker::Lorem.sentence(1)
   body = Faker::Lorem.paragraph(2)
   users.each { |user| user.articles.create!(title: title, body: body) }
+end
+
+# grab the first 6 user and create recipes
+users = User.order(:created_at).take(6)
+5.times do
+  name = Faker::Lorem.sentence(1)
+  description = Faker::Lorem.paragraph(1)
+  users.each { |user| user.recipes.create!(name: name, description: description) }
 end
