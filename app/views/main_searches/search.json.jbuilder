@@ -1,6 +1,6 @@
 json.articles do
   json.array!(@articles) do |article|
-    json.title article.title
+    json.name article.title
     json.url article_path(article)
   end
 end
