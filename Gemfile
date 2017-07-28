@@ -32,7 +32,8 @@ gem 'bcrypt', '~> 3.1.7'
 # Enables pagination for large lists
 gem 'will_paginate', '3.1.5'
 gem 'bootstrap-will_paginate', '1.0.0'
-
+# Use Ransack for searches
+gem 'ransack'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
