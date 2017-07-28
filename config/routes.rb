@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root   'core_pages#home'
 
+  get :search, controller: :main_searches
+
   get    '/about',   to: 'core_pages#about'
 
   get    '/contact', to: 'core_pages#contact'
