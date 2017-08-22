@@ -5,10 +5,7 @@ class MainSearchesController < ApplicationController
     @recipes  = Recipe.ransack(name_cont: params[:q]).result(distinct: true)
 
     respond_to do |format|
-      format.html {
-        @articles = @articles
-        @recipes = @recipes
-      }
+      format.html {}
       format.json {
         @articles = @articles.limit(5)
         @recipes  = @recipes.limit(5)
