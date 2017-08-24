@@ -1,10 +1,12 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
     <%= link_to "nwbrewmeisters", root_path, id: "logo" %>
-    
-    <%= form_with url: search_path, local: true, method: :get, html: { class: "navbar-form navbar-left" } do |form| %>
+
+    <%= form_with url: search_path, local: true, method: :get,
+                  html: { class: "navbar-form navbar-left" } do |form| %>
       <div class="form-group">
-        <%= form.text_field :q, placeholder: "Search", data: { behavior: "autocomplete"}, class: "form-control" %>
+        <%= form.text_field :q, placeholder: "Search",
+                                data: { behavior: "autocomplete"}, class: "form-control" %>
       </div>
       <%= form.button "Search", class: "btn btn-outline-success" %>
     <% end %>
